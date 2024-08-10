@@ -1,38 +1,112 @@
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.subtitle,
+.title {
+  text-align: center;
+}
+.title {
+  color: #0baf94;
+  font-size: 50px;
+  font-weight: 700;
+  text-shadow: 3px 3px #ca90ff;
+}
+.subtitle {
+  color: #ca90ff;
+  font-size: 30px;
+  font-weight: 900;
+  text-shadow: 3px 3px #0baf94;
+}
+.divider {
+  border-bottom: 4px solid rgba(255, 41, 41, .555);
+  height: 1px;
+  margin: 20px auto;
+  width: 50%;
+}
+.avatar-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 95%;
+  margin: 0 auto;
 }
-
-.App-link {
-  color: #61dafb;
+.avatar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: sticky;
+  top:25%;
 }
+.avatar-picture {
+  position: relative;
+  height: 306px;
+  background-color: pink;
+  width: 35%;
+  max-width: 500px;
+  min-width: 290px;
+  border: 15px solid rgba(117, 67, 183, 0.5);
+  border-radius: 40px;
+  background-color: rgba(176, 140, 215, 0.4)
+}
+.btn-random {
+  position: relative;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: antiquewhite;
+  background-color: rgba(255, 41, 41, .555);
+  border: none;
+  border-radius: 10px;
+}
+.avatar-option {
+  width: 61%;
+  max-width: 652px;
+  min-width: 375px;
+  display: flex;
+  flex-direction: column;
+}
+.part-list-container {
+  background-color: rgba(11, 175, 148, 0.4);
+  border: 5px solid rgba(0, 83, 64, 0.5);
+  border-radius: 15px;
+  padding: 20px;
+}
+.part-list{
+  display: flex;
+  justify-content: flex-end;
+}
+.part-list-content {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  column-gap: 10px;
+  justify-content: flex-start;
+  width: 100%;
+}
+.part-list-content>div{
+  background-color: rgba(255, 161, 122, .2);
+  border-radius: 25%;
+}
+.part-list-content .selected{
+  background-color: rgba(255, 161, 122, .4);
+  border: dashed 2px rgba(11, 175, 148, 0.5);
+}
+.list-section {
+  text-align: center;
+}
+.list-section h1 {
+  color: rgba(255, 41, 41, .555);
+  text-transform: capitalize;
+  font-size: 24px;
+}
+.part-list-content img {
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  border-radius: 10px;
 }
