@@ -11,9 +11,9 @@ function App() {
   const [displayOption, setDisplayOption] = useState(retrievedOptions.options);
   const [changingOpt, setChangingOpt] = useState({});
   const firstRandomAva = generateRandomAvatar();
- 
+
   const handleRandomize = () => {
-    const randomnessOptions=generateAvaOptions();
+    const randomnessOptions = generateAvaOptions();
     setAvatarImages(randomnessOptions.randoms);
     setDisplayOption(randomnessOptions.options);
   };
@@ -21,16 +21,15 @@ function App() {
   //   setAvatarImages(retrievedOptions.randoms);
   // }, []);
   useEffect(() => {
-    console.log(avatarImages);
-    if (avatarImages) {
-      const newAvaImg = avatarImages.slice();
-      for (let index = 0; index < newAvaImg.length; index++) {
-        if (newAvaImg[index].address.includes(changingOpt.bodyClass)) {
-          newAvaImg[index].address = changingOpt.address;
-          newAvaImg[index].index = changingOpt.index;
-        }
+    console.log("avatarImages");
+    const newAvaImg = avatarImages.slice();
+    for (let index = 0; index < newAvaImg.length; index++) {
+      if (newAvaImg[index].address.includes(changingOpt.bodyClass)) {
+        newAvaImg[index].address = changingOpt.address;
+        newAvaImg[index].index = changingOpt.index;
       }
     }
+    setAvatarImages(newAvaImg);
   }, [displayOption]);
   console.log(retrievedOptions);
   const handleSelect = (e) => {

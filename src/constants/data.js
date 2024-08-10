@@ -2,7 +2,7 @@ export const bodyOptions = [
   { id:"body", label: "body", total: 17 , index:1, address:"/body/"},
   { id:"eyes", label: "eyes", total: 17 , index:2, address:"/eyes/"},
   { id:"hair", label: "hair", total: 73 , index:3, address:"/hair/"},
-  { id:"facial_hair", label: "facial hair", total: 17 , index:4, address:"/facial_hair/"},
+  { id:"facial", label: "facial", total: 17 , index:4, address:"/facial/"},
   { id:"mouth", label: "mouth", total: 24 , index:5, address:"/mouths/"},
   { id:"eyebrows", label: "eyebrows", total: 15 , index:6, address:"/eyebrows/"},
   { id:"hat", label: "hat", total: 28 , index:7, address:"/accessories/hats/"},
