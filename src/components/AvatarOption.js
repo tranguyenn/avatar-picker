@@ -1,6 +1,7 @@
 import React from "react";
 
-function AvatarOption({ label, bodyDetails, index,selectPicture }) {
+function AvatarOption({ label, bodyDetails, index,selectPicture,bodyClass,avatarImages }) {
+ 
   return (
     <>
       <div className="list-section">
@@ -9,12 +10,12 @@ function AvatarOption({ label, bodyDetails, index,selectPicture }) {
           <div className="part-list body">
             <div className="part-list-content">
               {bodyDetails.map((detail) => (
-                <div key={detail} className="" onClick={selectPicture}>
+                <div key={detail.imgAdd} className={detail.selected ? "selected":"non"} onClick={selectPicture}>
                   <img
-                    src={`character/${detail}`}
+                    src={`character${detail.imgAdd}`}
                     alt=""
                     height="60"
-                    className="img-center"
+                    className={`${bodyClass}`}
                     style={{ top: "50%" }}
                   />
                 </div>
