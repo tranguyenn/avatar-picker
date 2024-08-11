@@ -5,8 +5,53 @@ import AvatarPicture from "./components/AvatarPicture";
 import Tittle from "./components/Tittle";
 import { generateAvaOptions, generateRandomAvatar } from "./utils/CommonUtils";
 
+const avatar = {
+  body: "",
+  eye: "",
+  hair: "",
+  facial: "",
+  mouth: "",
+  eyebrows: "",
+  hat: "",
+  neck: "",
+  earrings: "",
+  glasses: "",
+  layer_1: "",
+  layer_2: "",
+  layer_3: "",
+};
+const Z_INDEX = {
+  body: 1,
+  eye: 2,
+  hair: 3,
+  facial: 4,
+  mouth: 5,
+  eyebrows: 6,
+  hat: 7,
+  neck: 8,
+  earrings: 9,
+  glasses: 10,
+  layer_1: 11,
+  layer_2: 12,
+  layer_3: 13,
+};
 const retrievedOptions = generateAvaOptions();
 function App() {
+  const [displayAvatar, setDisplayAvatar] = useState({
+    body: "",
+    eye: "",
+    hair: "",
+    facial: "",
+    mouth: "",
+    eyebrows: "",
+    hat: "",
+    neck: "",
+    earrings: "",
+    glasses: "",
+    layer_1: "",
+    layer_2: "",
+    layer_3: "",
+  });
   const [avatarImages, setAvatarImages] = useState(retrievedOptions.randoms);
   const [displayOption, setDisplayOption] = useState(retrievedOptions.options);
   const [changingOpt, setChangingOpt] = useState({});
@@ -21,8 +66,8 @@ function App() {
   //   setAvatarImages(retrievedOptions.randoms);
   // }, []);
   useEffect(() => {
-    console.log("avatarImages");
     const newAvaImg = avatarImages.slice();
+    console.log(changingOpt.address);
     for (let index = 0; index < newAvaImg.length; index++) {
       if (newAvaImg[index].address.includes(changingOpt.bodyClass)) {
         newAvaImg[index].address = changingOpt.address;
@@ -30,10 +75,9 @@ function App() {
       }
     }
     setAvatarImages(newAvaImg);
-  }, [displayOption]);
-  console.log(retrievedOptions);
+  }, [changingOpt.address]);
+
   const handleSelect = (e) => {
-    console.log(e.target);
     if (e.target.className.includes("selected")) {
       console.log("123");
       return;
@@ -44,11 +88,9 @@ function App() {
         const details = displayNew[index].details;
 
         if (srcAdd.includes(displayNew[index].bodyClass)) {
-          console.log("details[a].imgAdd");
           let unselected = 0;
           for (let a = 0; a < details.length; a++) {
             if (srcAdd.endsWith(details[a].imgAdd)) {
-              console.log(details[a]);
               details[a].selected = true;
               unselected += 1;
             } else if (details[a].selected) {
@@ -70,7 +112,14 @@ function App() {
       }
     }
   };
+  const avatarImage = Object.keys(displayAvatar).reduce((result, key) => {
+    result = {
+      ...result,
 
+      [key]: { path: avatar[key], zIndex: Z_INDEX[key] },
+    };
+    return result;
+  });
   return (
     <>
       <Tittle />
@@ -91,6 +140,7 @@ function App() {
               bodyDetails={option.details}
               index={option.index}
               bodyClass={option.bodyClass}
+              selectedValue={}
               selectPicture={handleSelect}
             />
           ))}

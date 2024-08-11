@@ -1,6 +1,6 @@
 import React from "react";
 
-function AvatarOption({ label, bodyDetails, index,selectPicture,bodyClass,avatarImages }) {
+function AvatarOption({ label, bodyDetails, index,selectPicture,bodyClass,avatarImages,selectedValue }) {
  
   return (
     <>
