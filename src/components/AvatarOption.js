@@ -11,10 +11,10 @@ function AvatarOption({ label, bodyDetails,bodyClass,selectedValue,onSelectPictu
             <div className="part-list-content">
               {bodyDetails.map((detail) => (
                 <div 
-                  key={detail.imgAdd} 
-                  className={detail.imgAdd===selectedValue ? "selected":"non"} 
+                  key={detail} 
+                  className={detail===selectedValue ? "selected":"non"} 
                
-                  data-path={detail.imgAdd}
+                  data-path={detail}
                   // onClick={(event)=>{
                   //   const path=event.currentTarget.getAttribute("data-path");
 
@@ -23,7 +23,7 @@ function AvatarOption({ label, bodyDetails,bodyClass,selectedValue,onSelectPictu
                   >
                   
                   <img
-                    src={`character${detail.imgAdd}`}
+                    src={`character${detail}`}
                     alt=""
                     height="60"
                     className={`${bodyClass}`}

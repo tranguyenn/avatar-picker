@@ -37,15 +37,16 @@ const Z_INDEX = {
 };
 const retrievedOptions = generateAvaOptions();
 function App() {
-  const [displayAvatar, setDisplayAvatar] = useState(avatar);
-
-  const [displayOption, setDisplayOption] = useState(retrievedOptions.options);
+  const initAvatar = generateRandomAvatar();
+  const [displayAvatar, setDisplayAvatar] = useState(initAvatar);
+  const [displayOption, setDisplayOption] = useState(retrievedOptions);
 
   console.log("check key"+Object.keys(avatar));
   const handleRandomize = () => {
-    const randomnessOptions = generateAvaOptions();
-    setDisplayOption(randomnessOptions.options);
+    const randomAvatar=generateRandomAvatar()
+    setDisplayAvatar({...displayAvatar,randomAvatar});
   };
+
 
   const onSelectPicture = (key, value) => {
     console.log(key + "value" + value);
@@ -85,7 +86,7 @@ function App() {
               bodyClass={option.bodyClass}
               selectedValue={displayAvatar[option.bodyId]}
               onSelectPicture={(detail) =>
-                onSelectPicture(option.bodyId, detail.imgAdd)
+                onSelectPicture(option.bodyId, detail)
               }
             />
           ))}
