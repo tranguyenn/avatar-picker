@@ -9,7 +9,6 @@ function AvatarPicture({images}) {
          <img
          key={imge.path}
          src={`character${imge.path}`}
-        //  src={`character/body/1.`}
          alt=""
          width="260"
          style={{zIndex: imge.zIndex, position: 'absolute', left: '0px', top: '0px'}}

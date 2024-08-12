@@ -5,21 +5,7 @@ import AvatarPicture from "./components/AvatarPicture";
 import Tittle from "./components/Tittle";
 import { generateAvaOptions, generateRandomAvatar } from "./utils/CommonUtils";
 
-const avatar = {
-  body: "/body/1.png",
-  eyes: "",
-  hair: "",
-  facial: "",
-  mouth: "",
-  eyebrows: "",
-  hat: "",
-  neck: "",
-  earrings: "",
-  glasses: "",
-  layer_1: "",
-  layer_2: "",
-  layer_3: "",
-};
+
 const Z_INDEX = {
   body: 1,
   eyes: 2,
@@ -41,7 +27,7 @@ function App() {
   const [displayAvatar, setDisplayAvatar] = useState(initAvatar);
   const [displayOption, setDisplayOption] = useState(retrievedOptions);
 
-  console.log("check key"+Object.keys(avatar));
+
   const handleRandomize = () => {
     const randomAvatar=generateRandomAvatar()
     setDisplayAvatar({...displayAvatar,randomAvatar});
