@@ -18,7 +18,6 @@ export function generateAvaOptions() {
   const result = [];
 
   bodyOptions.forEach((body) => {
-     const selectedNum=getRandomArbitrary(body.total);
     let option = {
       bodyId: body.id,
       bodyLabel:body.label,

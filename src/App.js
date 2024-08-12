@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./App.css";
 import AvatarOption from "./components/AvatarOption";
 import AvatarPicture from "./components/AvatarPicture";
